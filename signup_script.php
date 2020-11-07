@@ -1,9 +1,9 @@
 <?php
-    require ("includes/common.php");
+    require("includes/common.php");
     
     $name = $_POST['name'];
     $name = mysqli_real_escape_string($con,$name);
-
+    
     $email = $_POST['email'];
     $email = mysqli_real_escape_string($con,$email);
 
@@ -16,7 +16,7 @@
 
     $city = $_POST['city'];
     $city = mysqli_real_escape_string($con,$city);
-
+    
     $address = $_POST['address'];
     $address = mysqli_real_escape_string($con,$address);
 
@@ -25,8 +25,7 @@
     $num = mysqli_num_rows($result);
 
     $regex_num = "/^[789][0-9]{9}$/";
-    $regex_email = "/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/";
-
+    $regex_email = "/^[a-z0-9.%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/";
 
     if ($num != 0){
         $m = "<span class='red'>Email Already Exists</span>";
